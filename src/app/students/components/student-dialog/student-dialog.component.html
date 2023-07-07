@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>Agregar estudiante</h1>
+    <div mat-dialog-content>
+        <form [formGroup]="studentForm" class="flex flex-column">
+            <mat-form-field appearance="fill">
+                <mat-label>Nombre Completo</mat-label>
+                <input [formControl]="nombreControl" matInput>
+              </mat-form-field> 
+            
+            <mat-form-field appearance="fill">
+                <mat-label>Edad</mat-label>
+                <input [formControl]="edadControl" matInput>
+              </mat-form-field>
+            
+            <mat-form-field appearance="fill">
+                <mat-label>Curso</mat-label>
+                <input [formControl]="cursoControl" matInput>
+              </mat-form-field>  
+        </form>
+
+        <div mat-dialog-actions >
+          <button mat-raised-button [mat-dialog-close]="studentForm.value" color="primary">Aceptar</button>
+          <button mat-raised-button (click)="close()" color="accent">Cerrar</button>
+        </div>
+
+    </div>

@@ -1,0 +1,56 @@
+
+<div >
+    <table mat-table [dataSource]="dataSource">
+    
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+      
+        
+        <ng-container matColumnDef="nombre">
+          <th mat-header-cell *matHeaderCellDef> Nombre </th>
+          <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+        </ng-container>
+      
+        
+        <ng-container matColumnDef="edad">
+          <th mat-header-cell *matHeaderCellDef> Edad </th>
+          <td mat-cell *matCellDef="let element"> {{element.edad}} </td>
+        </ng-container>
+      
+        
+        <ng-container matColumnDef="curso">
+          <th mat-header-cell *matHeaderCellDef> Curso </th>
+          <td mat-cell *matCellDef="let element"> {{element.curso}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="edit" >
+            <th mat-header-cell *matHeaderCellDef> Editar </th>
+            <td mat-cell *matCellDef="let element"> 
+              <button (click)="studentService.editarEstudiante(element)" mat-stroked-buttoncolor="primary"  >
+                <mat-icon>edit</mat-icon>
+              </button> 
+            </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef>Borrar</th>
+            <td mat-cell *matCellDef="let element"> 
+                <button mat-stroked-buttoncolor="primary" (click)="studentService.borrarEstudiante(element)" >
+                  <mat-icon>delete</mat-icon>
+                </button>    
+            </td>
+          </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      
+      
+      <div class="m-3">
+      
+        <button mat-flat-button color="primary" (click)="studentService.agregarEstudiante()" > Agregar Alumno</button>
+      </div>
+  </div>
+    

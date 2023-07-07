@@ -1,0 +1,18 @@
+.container{
+
+    display: flex;
+    justify-content: center;
+    
+
+}
+
+mat-card{
+    max-width: 600px;
+    margin: 40px;
+}
+
+
+
+mat-card-content{
+    text-align: center;
+}

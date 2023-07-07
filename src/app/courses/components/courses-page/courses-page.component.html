@@ -1,0 +1,62 @@
+<div >
+    <table mat-table [dataSource]="dataSource">
+    
+        <ng-container matColumnDef="comision">
+          <th mat-header-cell *matHeaderCellDef> No. Comision </th>
+          <td mat-cell *matCellDef="let element"> {{element.comision}} </td>
+        </ng-container>
+      
+        
+        <ng-container matColumnDef="nombre">
+          <th mat-header-cell *matHeaderCellDef> Nombre </th>
+          <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+        </ng-container>
+      
+        
+        <ng-container matColumnDef="profesor">
+          <th mat-header-cell *matHeaderCellDef> Profesor </th>
+          <td mat-cell *matCellDef="let element"> {{element.profesor}} </td>
+        </ng-container>
+
+      
+        <ng-container matColumnDef="edit" >
+            <th mat-header-cell *matHeaderCellDef> Editar </th>
+            <td mat-cell *matCellDef="let element"> 
+              <button (click)="cursoService.editarCurso(element)" mat-stroked-button color="primary"  >
+                <mat-icon>edit</mat-icon>
+              </button> 
+            </td>
+        </ng-container>
+    
+          <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef>Borrar</th>
+            <td mat-cell *matCellDef="let element"> 
+                <button mat-stroked-button color="warn" (click)="cursoService.borrarCurso(element)">
+                  <mat-icon>delete</mat-icon>
+                </button>    
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="detalle">
+            <th mat-header-cell *matHeaderCellDef>Detalle</th>
+            <td mat-cell *matCellDef="let element"> 
+                <button mat-stroked-buttoncolor="primary" [routerLink]="['/cursos', element.comision]">
+                  <mat-icon>info</mat-icon>
+                </button>    
+            </td>
+          </ng-container>
+    
+        
+    
+        <tr mat-header-row *matHeaderRowDef="columsToDisplay"></tr>
+        <tr mat-row *matRowDef="let row; columns: columsToDisplay;"></tr>
+      </table>
+      <div class="m-3">
+        <button mat-flat-button color="primary" (click)="cursoService.agregarCurso()"> Agregar Curso</button>
+      </div>
+</div>
+      
+      
+      
+     
+    

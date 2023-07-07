@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>Agregar Curso</h1>
+    <div mat-dialog-content>
+        <form [formGroup]="cursoForm" class="flex flex-column">
+
+          <mat-form-field appearance="fill">
+            <mat-label>Comision</mat-label>
+            <input [formControl]="comisionControl" matInput>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+                <mat-label>Curso</mat-label>
+                <input [formControl]="nombreControl" matInput>
+          </mat-form-field> 
+            
+                        
+          <mat-form-field appearance="fill">
+                <mat-label>Profesor</mat-label>
+                <input [formControl]="profesorControl" matInput>
+          </mat-form-field>  
+        </form>
+
+        <div mat-dialog-actions>
+          <button mat-raised-button [mat-dialog-close]="cursoForm.value" color="primary">Aceptar</button>
+          <button mat-flat-button color="accent" (click)="close()" >Cerrar</button>
+        </div>
+
+    </div>

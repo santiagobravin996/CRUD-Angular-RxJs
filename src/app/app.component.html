@@ -1,0 +1,65 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav mode="push"> 
+        
+        <mat-toolbar color="primary">
+            
+            <span>CODERHOUSE</span>
+            <span class="spacer"></span>
+            <button mat-icon-button
+                (click)="sidenav.toggle()">
+                
+                <mat-icon>menu</mat-icon>
+            </button>
+        </mat-toolbar>
+    
+        <mat-nav-list>
+
+            <a class="mb-2" routerLink="inicio"
+            mat-list-item
+            (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>home</mat-icon>
+                <span>Inicio</span>
+            </a>    
+            
+            <a class="mb-2" routerLink="alumnos/listar"
+            mat-list-item
+            (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>face</mat-icon>
+                <span>Listado de Alumnos</span>
+            </a>    
+            
+            <a class="mb-2" routerLink="cursos/listar"
+            mat-list-item
+            (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>class</mat-icon>
+                <span>Listado de Cursos</span>
+            </a>    
+
+            <a class="mb-2" routerLink="./listado"
+            mat-list-item
+            (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>edit</mat-icon>
+                <span>Inscripciones</span>
+            </a>    
+    
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+
+
+    <mat-toolbar>
+        
+        <button mat-icon-button
+            (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+    </mat-toolbar>
+    
+    <router-outlet></router-outlet>
+
+    
+</mat-sidenav-container>
+
+
